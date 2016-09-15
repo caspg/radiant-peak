@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @analyzer_result = github_username.present? ? analyzer_result : nil
+    @username = github_username
   end
 
   private
