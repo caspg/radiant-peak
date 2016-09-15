@@ -4,6 +4,9 @@ class HomeController < ApplicationController
     @username = github_username
   end
 
+  def horse
+  end
+
   private
 
   def analyzer_result
