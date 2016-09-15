@@ -12,12 +12,18 @@
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-				<%= form_tag('/github_repos', method: 'post') do %>
+				<%= form_tag('/home/index', method: 'get') do %>
 					<div class="form-group">
 						<%= text_field_tag(:github_username, nil, class: 'form-control', placeholder: 'GitHub username') %>
 					</div>
 					<%= submit_tag('Search', class: 'btn btn-default') %>
 				<% end %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<h1><%= @analyzer_result %></h1>
 			</div>
 		</div>
 	</div>
