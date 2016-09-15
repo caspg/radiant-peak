@@ -9,7 +9,6 @@ describe Github::ApiWrapper do
 
     before do
       allow(Net::HTTP).to receive(:get_response) { response }
-      allow(JSON).to receive(:parse)
     end
 
     it 'makes a request and then parse response' do
@@ -18,7 +17,6 @@ describe Github::ApiWrapper do
       subject.user_repos
 
       expect(Net::HTTP).to have_received(:get_response).with(expected_uri)
-      expect(JSON).to have_received(:parse).with(response.body)
     end
   end
 end

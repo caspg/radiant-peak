@@ -9,8 +9,6 @@ module Github
 
     def user_repos
       response = Net::HTTP.get_response(api_user_repos_uri)
-
-      JSON.parse(response.body)
     end
 
     private
