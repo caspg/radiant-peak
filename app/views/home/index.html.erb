@@ -1,2 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% content_for :head do %>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<% end %>
+
+<div class="home-page-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<h4>Enter GitHub username to findout user's favourite programming language:</h4>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<%= form_tag('/github_repos', method: 'post') do %>
+					<div class="form-group">
+						<%= text_field_tag(:github_username, nil, class: 'form-control', placeholder: 'GitHub username') %>
+					</div>
+					<%= submit_tag('Search', class: 'btn btn-default') %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
